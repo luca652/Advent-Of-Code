@@ -33,7 +33,26 @@ def check_scratchcards(input)
     elf_numbers = string.scan(/\|(.*)/).flatten.first.to_s.split.map(&:to_i)
     [winning_numbers, elf_numbers]
   end
-  matching_numbers(card_numbers)
+  card_numbers
 end
 
-p check_scratchcards(input)
+card_numbers = check_scratchcards(input)
+matches = matching_numbers(card_numbers)
+
+p matches
+
+# class Card
+#   attr_reader :id, :winners, :numbers
+
+#   def self.parse(line)
+#     line.split(":")
+#   end
+
+#   def initialize(id, winners, numbers)
+#     @id = id.to_i
+#     @winners = winners
+#     @numbers = numbers
+#   end
+
+
+# end
